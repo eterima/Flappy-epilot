@@ -9,6 +9,7 @@
   let pipes = [{ x: 400, height: 200 }];
   let score = 0;
   let gameOver = false;
+  let gameStarted = false; // Track if the game has started
 
   const gravity = 0.5;
   const flapStrength = -10;
@@ -20,18 +21,25 @@
     pipes = [{ x: 400, height: 200 }];
     score = 0;
     gameOver = false;
+    gameStarted = false; // Reset gameStarted to show "Ready?" again
   };
 
   const flap = () => {
-    if (!gameOver) {
+    if (gameStarted && !gameOver) {
       birdVelocity = flapStrength;
-    } else {
+    } else if (gameOver) {
       resetGame();
     }
   };
 
+  const startGame = () => {
+    gameStarted = true;
+    gameOver = false;
+    birdVelocity = flapStrength; // Start with an initial flap
+  };
+
   const gameLoop = () => {
-    if (gameOver) return;
+    if (!gameStarted || gameOver) return;
 
     birdY += birdVelocity;
     birdVelocity += gravity;
@@ -65,27 +73,41 @@
 </script>
 
 <div class="game" on:click={flap}>
-  <Bird {birdY} />
-  {#each pipes as { x, height }, index}
-    <Pipe {x} {height} gap={pipeGap} key={index} />
-  {/each}
-  <div class="score">Score: {score}</div>
-  {#if gameOver}
-    <div class="game-over">Game Over! Click to Restart</div>
+  {#if !gameStarted}
+    <!-- Show the "Ready?" text before the game starts -->
+    <div class="ready" on:click={startGame}>Ready?</div>
+  {:else}
+    <!-- Game elements once game starts -->
+    <Bird {birdY} />
+    {#each pipes as { x, height }, index}
+      <Pipe {x} {height} gap={pipeGap} key={index} />
+    {/each}
+    <div class="score">Score: {score}</div>
+    {#if gameOver}
+      <div class="game-over">Game Over! Click to Restart</div>
+    {/if}
   {/if}
 </div>
 
 <style>
-  /* Import background image */
   .game {
     position: relative;
     width: 400px;
     height: 600px;
-    background-image: url('/src/background.png'); /* Ensure this path matches your image location */
-    background-size: cover;
-    background-position: center;
+    background-color: #87ceeb;
     overflow: hidden;
     margin: 0 auto;
+    user-select: none;
+  }
+
+  .ready {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
   }
 
   .score {

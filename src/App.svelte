@@ -19,4 +19,8 @@
     background-color: #282c34;
     font-family: 'Press Start 2P', sans-serif; /* Apply the font here */
   }
+
+ * {
+    user-select: none;
+  }
 </style>

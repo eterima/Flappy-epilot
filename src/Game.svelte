@@ -90,11 +90,14 @@
 </div>
 
 <style>
+  /* Set up the background image */
   .game {
     position: relative;
     width: 400px;
     height: 600px;
-    background-color: #87ceeb;
+    background-image: url('/src/background.png'); /* Ensure this path matches your image location */
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
     margin: 0 auto;
     user-select: none;
@@ -116,6 +119,7 @@
     left: 10px;
     color: white;
     font-size: 24px;
+    font-family: Arial, sans-serif;
   }
 
   .game-over {
@@ -125,5 +129,6 @@
     transform: translate(-50%, -50%);
     color: red;
     font-size: 36px;
+    font-family: Arial, sans-serif;
   }
 </style>

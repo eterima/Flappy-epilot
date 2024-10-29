@@ -103,6 +103,11 @@
     user-select: none;
   }
 
+  /* Apply the retro font to all game-related text */
+  .ready, .score, .game-over {
+    font-family: 'Press Start 2P', sans-serif;
+  }
+
   .ready {
     position: absolute;
     top: 50%;
@@ -119,7 +124,6 @@
     left: 10px;
     color: white;
     font-size: 24px;
-    font-family: Arial, sans-serif;
   }
 
   .game-over {
@@ -129,6 +133,5 @@
     transform: translate(-50%, -50%);
     color: red;
     font-size: 36px;
-    font-family: Arial, sans-serif;
   }
 </style>

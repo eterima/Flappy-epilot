@@ -1,6 +1,6 @@
 <!-- src/Game.svelte -->
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
   import Bird from './Bird.svelte';
   import Pipe from './Pipe.svelte';
 
@@ -67,8 +67,27 @@
   };
 
   onMount(() => {
+    // Start the game loop
     const interval = setInterval(gameLoop, 30);
-    return () => clearInterval(interval);
+
+    // Listen for the spacebar keydown event
+    const handleKeyDown = (event) => {
+      if (event.code === 'Space') {
+        if (!gameStarted) {
+          startGame();
+        } else {
+          flap();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    // Clean up the interval and event listener on component destruction
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   });
 </script>
 

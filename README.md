@@ -12,4 +12,4 @@
 <p align="center">Thanks to Jakub who helped me debugging the text selection and being my first tester 😁💪</p>
 
 
-## <p align="center"> Wanna help me improve this game or work on ther nice stuff? <a href="https://www.epilot.cloud/en/company/careers/developers-engineering"> Join epilot 🚀</a></p>
+## <p align="center"> Wanna help me improve this game or work on other even better things? <a href="https://www.epilot.cloud/en/company/careers/developers-engineering"> Join epilot 🚀</a></p>

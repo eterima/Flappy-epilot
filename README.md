@@ -1,4 +1,4 @@
-Build status:[![Netlify Status](https://api.netlify.com/api/v1/badges/313faf41-b755-4878-93f6-e84634f2fd5b/deploy-status)](https://app.netlify.com/sites/flappyepilot/deploys)
+Deploy status: [![Netlify Status](https://api.netlify.com/api/v1/badges/313faf41-b755-4878-93f6-e84634f2fd5b/deploy-status)](https://app.netlify.com/sites/flappyepilot/deploys)
 
 
 # <p align="center">TGIF!!!</p>

@@ -13,7 +13,7 @@ Deploy status: [![Netlify Status](https://api.netlify.com/api/v1/badges/313faf41
 <p align="center"><img alt="epilot" src="src/architecture" width="800"></a></p>
 
 
-<p align="center">Thanks to Jakub who helped me debugging the text selection and being my first tester 😁💪</p>
+<p align="center">Thanks to <a href="https://github.com/durasj">Jakub</a> who helped me debugging the text selection and being my first tester 😁💪</p>
 
 
 ## <p align="center"> Wanna help me improve this game or work on other even better things? <a href="https://www.epilot.cloud/en/company/careers/developers-engineering"> Join epilot 🚀</a></p>
